@@ -1,48 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const SideNav = () => {
   const navigate = useNavigate();
+  const [activeItem, setActiveItem] = useState("Overview");
+
+  const menuItems = [
+    { label: "Overview", route: "/" },
+    { label: "Post a Job", route: "" },
+    { label: "Search CV", route: "" },
+    { label: "My Jobs", route: "" },
+    { label: "My Searches", route: "" },
+    { label: "My Candidates", route: "" },
+    { label: "Billing & Invoices", route: "" },
+    { label: "Settings", route: "/settings" },
+    { label: "Support", route: "" },
+  ];
+
   return (
     <aside className="bg-gray-100 h-full p-4">
       <div className="flex flex-col space-y-2">
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
-          Overview
-        </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
-          Post a Job
-        </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
-          Search CV
-        </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
-          My Jobs
-        </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
-          My Searches
-        </button>
-        <button
-          className="px-4 py-2 text-left hover:bg-gray-200"
-          onClick={() => navigate("/settings")}
-        >
-          My Candidates
-        </button>
-        <button
-          className="px-4 py-2 text-left hover:bg-gray-200"
-          onClick={() => navigate("/settings")}
-        >
-          Billing & Invoices
-        </button>
-        <button
-          className="px-4 py-2 text-left hover:bg-gray-200"
-          onClick={() => navigate("/settings")}
-        >
-          Settings
-        </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
-          Support
-        </button>
+        {menuItems.map((item) => (
+          <button
+            key={item.label}
+            className={`px-4 py-2 text-left hover:bg-gray-200 ${
+              activeItem === item.label
+                ? "text-blue-600 bg-blue-200 border-l-4 border-blue-600"
+                : "text-gray-600"
+            }`}
+            onClick={() => {
+              setActiveItem(item.label);
+              navigate(item.route);
+            }}
+          >
+            {item.label}
+          </button>
+        ))}
       </div>
     </aside>
   );

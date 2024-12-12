@@ -1,4 +1,3 @@
-import React from "react";
 import logo from "../assets/images/logo.png";
 import footer from "../assets/images/footer-img.png";
 import google from "../assets/images/google.png";
@@ -12,7 +11,7 @@ const Footer = () => (
       <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
         <div>
           <div className="flex justify-center text-teal-600 sm:justify-start">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img className="h-11 w-auto" src={logo} alt="" />
             </a>
@@ -27,7 +26,7 @@ const Footer = () => (
           <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
             <li>
               <a
-                href="#"
+                href="/"
                 className="text-teal-700 transition hover:text-teal-700/75"
               >
                 <span className="sr-only">Facebook</span>
@@ -48,7 +47,7 @@ const Footer = () => (
 
             <li>
               <a
-                href="#"
+                href="/"
                 rel="noreferrer"
                 target="_blank"
                 className="text-teal-700 transition hover:text-teal-700/75"
@@ -71,7 +70,7 @@ const Footer = () => (
 
             <li>
               <a
-                href="#"
+                href="/"
                 rel="noreferrer"
                 target="_blank"
                 className="text-teal-700 transition hover:text-teal-700/75"
@@ -90,7 +89,7 @@ const Footer = () => (
 
             <li>
               <a
-                href="#"
+                href="/"
                 rel="noreferrer"
                 target="_blank"
                 className="text-teal-700 transition hover:text-teal-700/75"
@@ -113,7 +112,7 @@ const Footer = () => (
 
             <li>
               <a
-                href="#"
+                href="/"
                 rel="noreferrer"
                 target="_blank"
                 className="text-teal-700 transition hover:text-teal-700/75"
@@ -133,6 +132,17 @@ const Footer = () => (
                 </svg>
               </a>
             </li>
+
+            <li>
+              <a
+                href="/"
+                rel="noreferrer"
+                target="_blank"
+                className="text-teal-700 transition hover:text-teal-700/75"
+              >
+                <span className="sr-only">Dribbble</span>
+              </a>
+            </li>
           </ul>
         </div>
         <div>
@@ -141,7 +151,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   About Us
                 </a>
@@ -150,7 +160,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   Contact
                 </a>
@@ -159,7 +169,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   Pricing
                 </a>
@@ -168,7 +178,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   {" "}
                   Blog{" "}
@@ -180,20 +190,20 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   Browse Jobs
                 </a>
               </li>
 
               <li>
-                <a href="#">Browse Employers</a>
+                <a href="/">Browse Employers</a>
               </li>
 
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   Post a Job
                 </a>
@@ -202,7 +212,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   {" "}
                   Search CVs{" "}
@@ -214,7 +224,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   Privacy Policy
                 </a>
@@ -223,7 +233,7 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   Terms & Conditions
                 </a>
@@ -232,20 +242,20 @@ const Footer = () => (
               <li>
                 <a
                   className="text-zinc-950 transition hover:text-zinc-950/75 whitespace-nowrap"
-                  href="#"
+                  href="/"
                 >
                   FAQs
                 </a>
               </li>
 
               <li>
-                <a href="#">Chat with Lety </a>
+                <a href="/">Chat with Lety </a>
               </li>
             </ul>
           </div>
         </div>
         <div>
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img className="h-11 w-auto mt-8" src={footer} alt="" />
           </a>

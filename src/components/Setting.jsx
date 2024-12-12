@@ -46,7 +46,7 @@ const Settings = () => {
             <div>
               <h2 className="my-2">Notification</h2>
               <div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {options.map((option) => (
                     <label
                       key={option.id}
@@ -62,14 +62,14 @@ const Settings = () => {
                     </label>
                   ))}
                 </div>
+
                 <hr />
                 <div>
                   <h2 className="my-2">Change Password</h2>
-                  <div className="flex justify-between">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div className="flex flex-col">
                       <label className="my-2">Current Password</label>
                       <TextField
-                        id="outlined-basic"
                         label="Current Password"
                         variant="outlined"
                         type={showPassword ? "text" : "password"}
@@ -99,7 +99,6 @@ const Settings = () => {
                     <div className="flex flex-col">
                       <label className="my-2">New Password</label>
                       <TextField
-                        id="outlined-basic"
                         label="New Password"
                         variant="outlined"
                         type={showPassword ? "text" : "password"}
@@ -129,7 +128,6 @@ const Settings = () => {
                     <div className="flex flex-col">
                       <label className="my-2">Confirm Password</label>
                       <TextField
-                        id="outlined-basic"
                         label="Confirm Password"
                         variant="outlined"
                         type={showPassword ? "text" : "password"}
