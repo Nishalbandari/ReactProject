@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaUserEdit, FaUserCircle } from "react-icons/fa";
-import TextField from "@mui/material/TextField";
+import { TextField, IconButton, InputAdornment } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("editAccount");
@@ -20,11 +21,10 @@ const Settings = () => {
   ];
 
   const handleCheckboxChange = (id) => {
-    setSelectedOptions(
-      (prev) =>
-        prev.includes(id)
-          ? prev.filter((optionId) => optionId !== id) // Remove if already selected
-          : [...prev, id] // Add if not already selected
+    setSelectedOptions((prev) =>
+      prev.includes(id)
+        ? prev.filter((optionId) => optionId !== id)
+        : [...prev, id]
     );
   };
 
@@ -65,11 +65,31 @@ const Settings = () => {
                 <h1>Change Password</h1>
                 <div className="flex justify-between">
                   <div className="flex flex-col">
-                    <label>Current PassWord</label>
+                    <label>Confirm Password</label>
                     <TextField
                       id="outlined-basic"
-                      label="Current PassWord"
+                      label="Confirm Password"
                       variant="outlined"
+                      type={showPassword ? "text" : "password"}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              onClick={handleTogglePasswordVisibility}
+                              edge="end"
+                              aria-label={
+                                showPassword ? "Hide password" : "Show password"
+                              }
+                            >
+                              {showPassword ? (
+                                <VisibilityOff />
+                              ) : (
+                                <Visibility />
+                              )}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
                     />
                   </div>
                   <div className="flex flex-col">

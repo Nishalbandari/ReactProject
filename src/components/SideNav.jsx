@@ -22,10 +22,16 @@ const SideNav = () => {
         <button className="px-4 py-2 text-left hover:bg-gray-200">
           My Searches
         </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
+        <button
+          className="px-4 py-2 text-left hover:bg-gray-200"
+          onClick={() => navigate("/settings")}
+        >
           My Candidates
         </button>
-        <button className="px-4 py-2 text-left hover:bg-gray-200">
+        <button
+          className="px-4 py-2 text-left hover:bg-gray-200"
+          onClick={() => navigate("/settings")}
+        >
           Billing & Invoices
         </button>
         <button
