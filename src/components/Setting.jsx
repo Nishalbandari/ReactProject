@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { FaUserEdit, FaUserCircle } from "react-icons/fa";
 import { TextField, IconButton, InputAdornment } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import Button from "@mui/material/Button";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("editAccount");
@@ -40,73 +42,153 @@ const Settings = () => {
       case "myProfile":
         return (
           <div>
-            <h1>Account</h1>
-
+            <h1 className="my-3">Account</h1>
             <div>
-              <h2>Notification</h2>
-              <div className="grid grid-cols-2 gap-4">
-                {options.map((option) => (
-                  <label
-                    key={option.id}
-                    className="flex items-center space-x-2 cursor-pointer"
-                  >
-                    <input
-                      type="checkbox"
-                      checked={selectedOptions.includes(option.id)}
-                      onChange={() => handleCheckboxChange(option.id)}
-                      className="form-checkbox text-blue-500"
-                    />
-                    <span>{option.label}</span>
-                  </label>
-                ))}
-              </div>
-              <hr />
+              <h2 className="my-2">Notification</h2>
               <div>
-                <h1>Change Password</h1>
-                <div className="flex justify-between">
-                  <div className="flex flex-col">
-                    <label>Confirm Password</label>
-                    <TextField
-                      id="outlined-basic"
-                      label="Confirm Password"
-                      variant="outlined"
-                      type={showPassword ? "text" : "password"}
-                      InputProps={{
-                        endAdornment: (
-                          <InputAdornment position="end">
-                            <IconButton
-                              onClick={handleTogglePasswordVisibility}
-                              edge="end"
-                              aria-label={
-                                showPassword ? "Hide password" : "Show password"
-                              }
-                            >
-                              {showPassword ? (
-                                <VisibilityOff />
-                              ) : (
-                                <Visibility />
-                              )}
-                            </IconButton>
-                          </InputAdornment>
-                        ),
-                      }}
-                    />
+                <div className="grid grid-cols-2 gap-4">
+                  {options.map((option) => (
+                    <label
+                      key={option.id}
+                      className="flex items-center space-x-2 cursor-pointer"
+                    >
+                      <input
+                        type="checkbox"
+                        checked={selectedOptions.includes(option.id)}
+                        onChange={() => handleCheckboxChange(option.id)}
+                        className="form-checkbox text-blue-500"
+                      />
+                      <span>{option.label}</span>
+                    </label>
+                  ))}
+                </div>
+                <hr />
+                <div>
+                  <h2 className="my-2">Change Password</h2>
+                  <div className="flex justify-between">
+                    <div className="flex flex-col">
+                      <label className="my-2">Current Password</label>
+                      <TextField
+                        id="outlined-basic"
+                        label="Current Password"
+                        variant="outlined"
+                        type={showPassword ? "text" : "password"}
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                onClick={handleTogglePasswordVisibility}
+                                edge="end"
+                                aria-label={
+                                  showPassword
+                                    ? "Hide password"
+                                    : "Show password"
+                                }
+                              >
+                                {showPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="my-2">New Password</label>
+                      <TextField
+                        id="outlined-basic"
+                        label="New Password"
+                        variant="outlined"
+                        type={showPassword ? "text" : "password"}
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                onClick={handleTogglePasswordVisibility}
+                                edge="end"
+                                aria-label={
+                                  showPassword
+                                    ? "Hide password"
+                                    : "Show password"
+                                }
+                              >
+                                {showPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                    </div>
+                    <div className="flex flex-col">
+                      <label className="my-2">Confirm Password</label>
+                      <TextField
+                        id="outlined-basic"
+                        label="Confirm Password"
+                        variant="outlined"
+                        type={showPassword ? "text" : "password"}
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end">
+                              <IconButton
+                                onClick={handleTogglePasswordVisibility}
+                                edge="end"
+                                aria-label={
+                                  showPassword
+                                    ? "Hide password"
+                                    : "Show password"
+                                }
+                              >
+                                {showPassword ? (
+                                  <VisibilityOff />
+                                ) : (
+                                  <Visibility />
+                                )}
+                              </IconButton>
+                            </InputAdornment>
+                          ),
+                        }}
+                      />
+                    </div>
                   </div>
-                  <div className="flex flex-col">
-                    <label>New Password</label>
-                    <TextField
-                      id="outlined-basic"
-                      label="New Password"
-                      variant="outlined"
-                    />
+                  <div className="flex justify-end py-4">
+                    <Button variant="contained">Save Changes</Button>
                   </div>
-                  <div className="flex flex-col">
-                    <label>Confirm Password</label>
-                    <TextField
-                      id="outlined-basic"
-                      label="Confirm Password"
-                      variant="outlined"
-                    />
+                </div>
+                <hr />
+                <div>
+                  <h2 className="my-2">Make My Account Inactive</h2>
+                  <p>
+                    If you deactivate your account, you will stop receiving
+                    updatyes on new features and regular communications from
+                    Skillety as part of the services. Log in to your account
+                    again to reactivate it
+                  </p>
+                  <div className=" py-4">
+                    <Button variant="contained" startIcon={<CloseIcon />}>
+                      Deactivate Account
+                    </Button>
+                  </div>
+                </div>
+                <hr />
+                <div className="my-2">
+                  <h2 className="my-2">Delete My Account</h2>
+                  <p>
+                    If you dekete your Skillety account, you will no longer
+                    receive Information about the matched jobs, followed
+                    employes, job alerts, shotlisted jobs and more You will lose
+                    access to all services on Skillety.
+                  </p>
+                  <div className=" py-4">
+                    <Button variant="contained" startIcon={<CloseIcon />}>
+                      Delete Account
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -120,7 +202,6 @@ const Settings = () => {
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Settings</h1>
       <div className="flex space-x-4 border-b pb-2 mb-4">
         <button
           className={`flex items-center space-x-2 py-2 px-4 ${

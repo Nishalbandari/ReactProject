@@ -6,11 +6,13 @@ import SideNav from "./SideNav";
 
 const Layout = () => {
   return (
-    <div className="layout">
+    <div className="layout flex flex-col h-screen">
       <Header />
-      <div style={{ display: "flex" }}>
-        <SideNav style={{ width: "20%" }} />
-        <main style={{ flex: 1, padding: "1rem" }}>
+      <div className="flex flex-1 mt-44">
+        <aside className="w-1/5 bg-gray-100">
+          <SideNav />
+        </aside>
+        <main className="flex-1 p-4 overflow-auto">
           <Outlet />
         </main>
       </div>
